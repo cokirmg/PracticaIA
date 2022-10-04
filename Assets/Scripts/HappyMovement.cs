@@ -26,7 +26,7 @@ public class HappyMovement : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, barajas[numPoint].position) < 1f)
         {
-            if(numPoint >= 6)
+            if(numPoint == barajas.Length)
             {
                 numPoint = 0;
             }
@@ -43,16 +43,21 @@ public class HappyMovement : MonoBehaviour
             //GetComponent<Rigidbody>().velocity = (barajas[numPoint].position - transform.position).normalized * velocity;
         }
 
-        // Find the nearest point on water.
+        // Find the nearest point on .
         int sandMask = 1 << NavMesh.GetAreaFromName("Sand");
         NavMeshHit hit;
-        if (NavMesh.SamplePosition(transform.position, out hit, 2.0f, sandMask))
+        if (NavMesh.SamplePosition(transform.position, out hit, 0.01f, sandMask))
         {
-            agent.speed = 1.5f;
+            if(agent.speed > agent.speed / 2)
+            {
+                Debug.Log("arena");
+                agent.speed = agent.speed / 2;
+            }
+            
         }
         else
         {
-            agent.speed = 3.0f;
+            agent.speed = 3.5f;
         }
     }
 }

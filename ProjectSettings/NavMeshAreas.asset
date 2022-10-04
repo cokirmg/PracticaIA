@@ -14,7 +14,7 @@ NavMeshProjectSettings:
   - name: Sand
     cost: 2
   - name: Base
-    cost: 1
+    cost: 2
   - name: OffMesh
     cost: 1
   - name: 
