@@ -15,7 +15,7 @@ NavMeshProjectSettings:
     cost: 2
   - name: Base
     cost: 1
-  - name: 
+  - name: OffMesh
     cost: 1
   - name: 
     cost: 1

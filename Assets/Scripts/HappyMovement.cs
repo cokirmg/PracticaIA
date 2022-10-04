@@ -52,7 +52,7 @@ public class HappyMovement : MonoBehaviour
         }
         else
         {
-            agent.speed = 3.5f;
+            agent.speed = 3.0f;
         }
     }
 }
