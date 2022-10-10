@@ -21,10 +21,12 @@ public class Geiser : MonoBehaviour
         while (true)
         {
             emission.enabled = false;
+            //Cuando el geiser está desactivado que se desactive el componente de obstáculo
             obstacle.enabled = false;
             yield return new WaitForSeconds(Random.Range(MinRate, MaxRate));
             emission.enabled = true;
             yield return new WaitForSeconds(1);
+            //Cuando el geiser esté activado que se active el componente de obstáculo
             obstacle.enabled = true; ;
             yield return new WaitForSeconds(Random.Range(MinRate, MaxRate));
         }
