@@ -25,25 +25,26 @@ public class HappyMovement : MonoBehaviour
     void Update()
     {
         //Aquí le digo que cada vez que llegue pase al siguiente punto, y si el punto es el máximo, que vuelva al principio
-        if (Vector3.Distance(transform.position, barajas[numPoint].position) < 1f)
-        {
-            if(numPoint == barajas.Length)
+        
+            if (Vector3.Distance(transform.position, barajas[numPoint].position) < 1f)
             {
-                numPoint = 0;
+                agent.destination = barajas[numPoint].position;
+                numPoint = (numPoint +1) % barajas.Length;
+
+               
             }
             else
             {
-                numPoint++;
-                
-            }
-            agent.destination = barajas[numPoint].position;
-        }
-        else
-        {
-            agent.destination = barajas[numPoint].position;
-            
-        }
+                agent.destination = barajas[numPoint].position;
 
+
+            }
+
+            agent.destination = barajas[numPoint].position;
+        
+       
+
+        
         //Si toca la arena, que se reduzca la velocidad a la mitad
         int sandMask = 1 << NavMesh.GetAreaFromName("Sand");
         NavMeshHit hit;
@@ -59,7 +60,7 @@ public class HappyMovement : MonoBehaviour
         }
         else //Si no toca la arena que sea su velocidad normal
         {
-            agent.speed = 3.5f;
+            agent.speed = 20f;
         }
     }
 }
