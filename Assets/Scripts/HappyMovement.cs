@@ -33,12 +33,7 @@ public class HappyMovement : MonoBehaviour
 
                
             }
-            else
-            {
-                agent.destination = barajas[numPoint].position;
-
-
-            }
+            
 
             agent.destination = barajas[numPoint].position;
         
@@ -60,7 +55,7 @@ public class HappyMovement : MonoBehaviour
         }
         else //Si no toca la arena que sea su velocidad normal
         {
-            agent.speed = 20f;
+            agent.speed = 3.5f;
         }
     }
 }
