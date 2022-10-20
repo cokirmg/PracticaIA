@@ -5,22 +5,30 @@ using UnityEngine.AI;
 
 public class Search : StateMachineBehaviour
 {
-    public Transform[] barajas;
-    public int numPoint = 0;
-    public float velocity = 5f;
-    public NavMeshAgent agent;
+    //public Transform[] barajas;
+    public int numPoint ;
+    //public float velocity = 5f;
+    private NavMeshAgent agent;
+    private Transform[] barajas;
+
+    public bool charge;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         agent = animator.gameObject.GetComponent<NavMeshAgent>();
-        //le decimos que siga la ruta de los arrays
+        barajas = animator.gameObject.GetComponent<SearchPoints>().barajasPoints;
+        numPoint = animator.gameObject.GetComponent<SearchPoints>().numPoint;
+        charge = animator.gameObject.GetComponent<chargeCooldown>().needCharge;
         agent.destination = barajas[numPoint].position;
+        //le decimos que siga la ruta de los arrays
+        //agent.destination = barajas[numPoint].position;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        agent.destination = barajas[numPoint].position;
         //Aquí le digo que cada vez que llegue pase al siguiente punto, y si el punto es el máximo, que vuelva al principio
 
         if (Vector3.Distance(animator.gameObject.transform.position, barajas[numPoint].position) < 1f)
@@ -35,7 +43,7 @@ public class Search : StateMachineBehaviour
         agent.destination = barajas[numPoint].position;
 
 
-
+        
 
         //Si toca la arena, que se reduzca la velocidad a la mitad
         int sandMask = 1 << NavMesh.GetAreaFromName("Sand");
@@ -53,6 +61,12 @@ public class Search : StateMachineBehaviour
         else //Si no toca la arena que sea su velocidad normal
         {
             agent.speed = 3.5f;
+        }
+
+        charge = animator.gameObject.GetComponent<chargeCooldown>().needCharge;
+        if (charge == true)
+        {
+            animator.SetBool("charge", true);
         }
     }
 

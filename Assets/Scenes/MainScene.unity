@@ -4691,28 +4691,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6122183576180447149, guid: c9798dc037595df489ed2f8ebabe34d0, type: 3}
   m_PrefabInstance: {fileID: 241629634}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &704289218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 704289216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cf27f18c368114487ce4d47478ea2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barajas:
-  - {fileID: 469330462}
-  - {fileID: 74523911}
-  - {fileID: 206929382}
-  - {fileID: 65784449}
-  - {fileID: 1633452708}
-  - {fileID: 985140454}
-  numPoint: 0
-  velocity: 5
-  agent: {fileID: 0}
 --- !u!195 &704289219
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4735,6 +4713,61 @@ NavMeshAgent:
   m_BaseOffset: -0.02
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
+--- !u!114 &704289220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704289216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba410da701c2e744af2e86d9ad8cf35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barajas: {fileID: 0}
+  barajasPoints:
+  - {fileID: 74523911}
+  - {fileID: 1633452708}
+  - {fileID: 469330462}
+  - {fileID: 206929382}
+  - {fileID: 65784449}
+  - {fileID: 985140454}
+  numPoint: 0
+--- !u!95 &704289222
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704289216}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eccaef7e234591c48bcb3742bb1b107c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &704289223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704289216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f5d0173bc215944497e6dd4e603d159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charging: 0
+  needCharge: 0
 --- !u!1001 &704464222
 PrefabInstance:
   m_ObjectHideFlags: 0
