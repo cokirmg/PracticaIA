@@ -9,11 +9,11 @@ public class Search : StateMachineBehaviour
     public int numPoint = 0;
     public float velocity = 5f;
     public NavMeshAgent agent;
-    public GameObject agenteGO;
+    
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        agent = agenteGO.GetComponent<NavMeshAgent>();
+        agent = animator.gameObject.GetComponent<NavMeshAgent>();
         //le decimos que siga la ruta de los arrays
         agent.destination = barajas[numPoint].position;
     }
@@ -23,7 +23,7 @@ public class Search : StateMachineBehaviour
     {
         //Aquí le digo que cada vez que llegue pase al siguiente punto, y si el punto es el máximo, que vuelva al principio
 
-        if (Vector3.Distance(agenteGO.transform.position, barajas[numPoint].position) < 1f)
+        if (Vector3.Distance(animator.gameObject.transform.position, barajas[numPoint].position) < 1f)
         {
             agent.destination = barajas[numPoint].position;
             numPoint = (numPoint + 1) % barajas.Length;
@@ -40,7 +40,7 @@ public class Search : StateMachineBehaviour
         //Si toca la arena, que se reduzca la velocidad a la mitad
         int sandMask = 1 << NavMesh.GetAreaFromName("Sand");
         NavMeshHit hit;
-        if (NavMesh.SamplePosition(agenteGO.transform.position, out hit, 0.01f, sandMask))
+        if (NavMesh.SamplePosition(animator.gameObject.transform.position, out hit, 0.01f, sandMask))
         {
             //Aqui le digo que solo lo haga si su velocidad es mayor que la mitad de su velocidad normal, para que no lo haga todo el rato
             if (agent.speed > agent.speed / 2)
