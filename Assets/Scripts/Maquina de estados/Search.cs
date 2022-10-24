@@ -71,6 +71,7 @@ public class Search : StateMachineBehaviour
         }
 
         Ray ray = new Ray(agent.transform.position, agent.transform.forward);
+        Debug.DrawRay(agent.transform.position, agent.transform.forward, Color.red);
         RaycastHit toca;
 
         if(Physics.Raycast(ray, out toca, 5f))
