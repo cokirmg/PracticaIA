@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -68,6 +69,18 @@ public class Search : StateMachineBehaviour
         {
             animator.SetBool("charge", true);
         }
+
+        Ray ray = new Ray(agent.transform.position, agent.transform.forward);
+        RaycastHit toca;
+
+        if(Physics.Raycast(ray, out toca, 5f))
+            {
+           //hit.transform.tag = 
+        }
+
+
+
+        
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
