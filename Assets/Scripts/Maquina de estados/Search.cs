@@ -12,16 +12,18 @@ public class Search : StateMachineBehaviour
     private NavMeshAgent agent;
     private Transform[] barajas;
 
-    public bool charge;
+    public float secCharge; 
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         agent = animator.gameObject.GetComponent<NavMeshAgent>();
         barajas = animator.gameObject.GetComponent<SearchPoints>().barajasPoints;
-        numPoint = animator.gameObject.GetComponent<SearchPoints>().numPoint;
-        charge = animator.gameObject.GetComponent<chargeCooldown>().needCharge;
-        agent.destination = barajas[numPoint].position;
+        //numPoint = animator.gameObject.GetComponent<SearchPoints>().numPoint;
+
+        secCharge = 0;
+        agent.speed = 3.5f;
+        //agent.destination = barajas[numPoint].position;
         //le decimos que siga la ruta de los arrays
         //agent.destination = barajas[numPoint].position;
     }
@@ -32,9 +34,10 @@ public class Search : StateMachineBehaviour
         agent.destination = barajas[numPoint].position;
         //Aquí le digo que cada vez que llegue pase al siguiente punto, y si el punto es el máximo, que vuelva al principio
 
-        if (Vector3.Distance(animator.gameObject.transform.position, barajas[numPoint].position) < 1f)
+        if (Vector3.Distance(agent.transform.position, barajas[numPoint].position) < 1f)
         {
             agent.destination = barajas[numPoint].position;
+            Debug.Log("punto " + numPoint);
             numPoint = (numPoint + 1) % barajas.Length;
 
 
@@ -64,10 +67,12 @@ public class Search : StateMachineBehaviour
             agent.speed = 3.5f;
         }
 
-        charge = animator.gameObject.GetComponent<chargeCooldown>().needCharge;
-        if (charge == true)
+        secCharge = secCharge + 1 * Time.deltaTime;
+        if (secCharge >= 30)
         {
+            secCharge = 0;
             animator.SetBool("charge", true);
+            
         }
 
         Ray ray = new Ray(agent.transform.position, agent.transform.forward);
@@ -76,7 +81,14 @@ public class Search : StateMachineBehaviour
 
         if(Physics.Raycast(ray, out toca, 5f))
             {
-           //hit.transform.tag = 
+            if (!(toca.transform.tag == ("pared")))
+            {
+                
+                animator.SetBool("scan", true);
+            }
+            
+            
+            //hit.transform.tag = 
         }
 
 
@@ -87,7 +99,7 @@ public class Search : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        agent.speed = 0f;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
