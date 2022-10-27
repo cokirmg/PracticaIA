@@ -6,5 +6,6 @@ public class SearchPoints : MonoBehaviour
 {
     public Transform barajas;
     public Transform[] barajasPoints;
-    
+
+    public Transform basePoint;
 }

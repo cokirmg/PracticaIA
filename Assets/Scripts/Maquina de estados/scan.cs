@@ -27,21 +27,28 @@ public class scan : StateMachineBehaviour
         RaycastHit toca;
 
         secScan = secScan + 1 * Time.deltaTime;
-        if (secScan >= 5)
+       
+        if (secScan >= 5f)
         {
-            if (Physics.Raycast(ray, out toca, 5f) && objetoRaycast != toca.transform)
+            
+            if (Physics.Raycast(ray, out toca, 5f))
             {
 
-
-
-                if (toca.transform.tag == ("roca"))
+                Debug.Log(" raycast entra");
+                if (objetoRaycast != toca.transform)
                 {
+                    
+                    Debug.Log(" segundo if !=");
+
+                    if (toca.transform.tag == ("roca"))
+                    {
+                        objetoRaycast = toca.transform;
+                        animator.SetBool("collect", true);
+                        
 
 
-                    animator.SetBool("collect", true);
-                    conteo++;
-
-
+                    }
+                    
                 }
                 else
                 {
@@ -50,6 +57,9 @@ public class scan : StateMachineBehaviour
                 }
 
                 objetoRaycast = toca.transform;
+
+
+                
                 //animator.SetBool("scan", false);
                 //hit.transform.tag = 
             }
@@ -57,7 +67,7 @@ public class scan : StateMachineBehaviour
             {
                 animator.SetBool("scan", false);
             }
-            secScan = 0;
+            
             animator.SetBool("scan", false);
 
         }
@@ -71,7 +81,8 @@ public class scan : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("collect", false);
+        secScan = 0;
+        //animator.SetBool("collect", false);
     }
 
    

@@ -12,8 +12,10 @@ public class Search : StateMachineBehaviour
     private NavMeshAgent agent;
     private Transform[] barajas;
 
-    public float secCharge; 
-    
+    public float secCharge;
+
+
+    public Transform objetoRaycast;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -78,19 +80,20 @@ public class Search : StateMachineBehaviour
         Ray ray = new Ray(agent.transform.position, agent.transform.forward);
         Debug.DrawRay(agent.transform.position, agent.transform.forward, Color.red);
         RaycastHit toca;
+        
+            if (Physics.Raycast(ray, out toca, 5f))
+            {
+            if (objetoRaycast != toca.transform) {
+                if (!(toca.transform.tag == ("pared")))
+                {
+                    objetoRaycast = toca.transform;
+                    animator.SetBool("scan", true);
+                }
 
-        if(Physics.Raycast(ray, out toca, 5f))
-            {
-            if (!(toca.transform.tag == ("pared")))
-            {
-                
-                animator.SetBool("scan", true);
+
             }
-            
-            
-            //hit.transform.tag = 
-        }
-
+            }
+        
 
 
         
