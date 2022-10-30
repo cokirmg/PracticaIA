@@ -7,15 +7,18 @@ public class scan : StateMachineBehaviour
 {
     private NavMeshAgent agent;
     public float secScan;
-    public int conteo;
-    public Transform objetoRaycast;
+    public float rotationNum = 20f;
+    
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        
         secScan = 0;
         agent = animator.gameObject.GetComponent<NavMeshAgent>();
 
         agent.speed = 0f;
+
+
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -26,58 +29,92 @@ public class scan : StateMachineBehaviour
         Debug.DrawRay(agent.transform.position, agent.transform.forward, Color.red);
         RaycastHit toca;
 
-        secScan = secScan + 1 * Time.deltaTime;
-       
-        if (secScan >= 5f)
+
+        if (agent.name == "Happy" || agent.name == "Grumpy")
         {
-            
-            if (Physics.Raycast(ray, out toca, 5f))
+            if (agent.transform.rotation.y >= 0f && agent.name == "Happy")
             {
-
-                Debug.Log(" raycast entra");
-                if (objetoRaycast != toca.transform)
+                agent.transform.Rotate(0, 90f * Time.deltaTime, 0);
+                if (Physics.Raycast(ray, out toca, 5f))
                 {
-                    
-                    Debug.Log(" segundo if !=");
-
-                    if (toca.transform.tag == ("roca"))
+                    if (toca.transform.tag == "Rover")
                     {
-                        objetoRaycast = toca.transform;
-                        animator.SetBool("collect", true);
-                        
-
-
+                        animator.SetBool("scan", false);
                     }
-                    
+
                 }
                 else
                 {
+                    secScan = secScan + 1 * Time.deltaTime;
 
-                    animator.SetBool("scan", false);
+                    if (secScan >= 5f)
+                    {
+                        if (Physics.Raycast(ray, out toca, 5f))
+                        {
+
+
+
+                            if (toca.transform.tag == ("planta"))
+                            {
+
+
+                                animator.SetBool("collect", true);
+
+                            }
+                            else
+                            {
+
+                                animator.SetBool("scan", false);
+                            }
+
+                        }
+
+                    }
+                    else
+                    {
+                        animator.SetBool("scan", false);
+                    }
                 }
-
-                objetoRaycast = toca.transform;
-
-
-                
-                //animator.SetBool("scan", false);
-                //hit.transform.tag = 
             }
-            else
-            {
-                animator.SetBool("scan", false);
-            }
-            
-            animator.SetBool("scan", false);
 
         }
 
+        if (agent.name == "Dopey")
+        {
+            secScan = secScan + 1 * Time.deltaTime;
+            if (secScan >= 5f)
+            {
 
-        
-        
-        
+                if (Physics.Raycast(ray, out toca, 5f))
+                {
+
+                    if (toca.transform.tag == ("roca"))
+                    {
+
+                        Debug.Log("Detecta roca");
+                        animator.SetBool("collect", true);
+
+
+
+                    }
+                    else
+                    {
+
+                        animator.SetBool("scan", false);
+                    }
+
+
+                }
+                else
+                {
+                    animator.SetBool("scan", false);
+                }
+
+
+
+            }
+        }
     }
-
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

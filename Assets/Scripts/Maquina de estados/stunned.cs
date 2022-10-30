@@ -2,47 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class collect : StateMachineBehaviour
+public class stunned : StateMachineBehaviour
 {
-    public int conteo;
-    public float secCollect;
+    public float secStunned;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        conteo++;
-    }
+    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
-        secCollect = secCollect + 1 * Time.deltaTime;
-        if (secCollect >= 3)
+        secStunned = secStunned + 1 * Time.deltaTime;
+        if (secStunned >= 5)
         {
-            if(conteo >= 3)
-                {
-                animator.SetBool("base", true);
-                conteo = 0;
-            }
-            else
-            {
-                conteo++;
-                animator.SetBool("collect", false);
-            }
             
-            
+            animator.SetBool("hit", false);
 
         }
-        
-        
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        secCollect = 0;
-        
-        animator.SetBool("scan", false);
+        secStunned = 0;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

@@ -516,6 +516,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Gerneric_Grass_006
       objectReference: {fileID: 0}
+    - target: {fileID: 1996179480292840, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
+      propertyPath: m_TagString
+      value: planta
+      objectReference: {fileID: 0}
     - target: {fileID: 4349752493701502, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -662,6 +666,10 @@ PrefabInstance:
     - target: {fileID: 1996179480292840, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
       propertyPath: m_Name
       value: SM_Gerneric_Grass_002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996179480292840, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
+      propertyPath: m_TagString
+      value: planta
       objectReference: {fileID: 0}
     - target: {fileID: 4349752493701502, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
       propertyPath: m_RootOrder
@@ -1057,6 +1065,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_crystals
       objectReference: {fileID: 0}
+    - target: {fileID: 558681881705370214, guid: c1d0000cc987cac49a32d62c1214f985, type: 3}
+      propertyPath: m_TagString
+      value: roca
+      objectReference: {fileID: 0}
     - target: {fileID: 903823410991106268, guid: c1d0000cc987cac49a32d62c1214f985, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1331,6 +1343,10 @@ PrefabInstance:
     - target: {fileID: 6188687268421896863, guid: 29430943fc8461b42af0da72f28a0f67, type: 3}
       propertyPath: m_Name
       value: rock_crystalsLargeA
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188687268421896863, guid: 29430943fc8461b42af0da72f28a0f67, type: 3}
+      propertyPath: m_TagString
+      value: roca
       objectReference: {fileID: 0}
     - target: {fileID: 6821109436605878309, guid: 29430943fc8461b42af0da72f28a0f67, type: 3}
       propertyPath: m_RootOrder
@@ -2163,6 +2179,10 @@ PrefabInstance:
     - target: {fileID: 255209753552570716, guid: febf971a89ddc4f47b283124c8731fa5, type: 3}
       propertyPath: m_Name
       value: rock_crystalsLargeB
+      objectReference: {fileID: 0}
+    - target: {fileID: 255209753552570716, guid: febf971a89ddc4f47b283124c8731fa5, type: 3}
+      propertyPath: m_TagString
+      value: roca
       objectReference: {fileID: 0}
     - target: {fileID: 630925368765125606, guid: febf971a89ddc4f47b283124c8731fa5, type: 3}
       propertyPath: m_RootOrder
@@ -3142,6 +3162,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Gerneric_Grass
       objectReference: {fileID: 0}
+    - target: {fileID: 1996179480292840, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
+      propertyPath: m_TagString
+      value: planta
+      objectReference: {fileID: 0}
     - target: {fileID: 4349752493701502, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3205,6 +3229,10 @@ PrefabInstance:
     - target: {fileID: 255209753552570716, guid: febf971a89ddc4f47b283124c8731fa5, type: 3}
       propertyPath: m_Name
       value: rock_crystalsLargeB
+      objectReference: {fileID: 0}
+    - target: {fileID: 255209753552570716, guid: febf971a89ddc4f47b283124c8731fa5, type: 3}
+      propertyPath: m_TagString
+      value: roca
       objectReference: {fileID: 0}
     - target: {fileID: 630925368765125606, guid: febf971a89ddc4f47b283124c8731fa5, type: 3}
       propertyPath: m_RootOrder
@@ -4538,6 +4566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_crystals
       objectReference: {fileID: 0}
+    - target: {fileID: 558681881705370214, guid: c1d0000cc987cac49a32d62c1214f985, type: 3}
+      propertyPath: m_TagString
+      value: roca
+      objectReference: {fileID: 0}
     - target: {fileID: 903823410991106268, guid: c1d0000cc987cac49a32d62c1214f985, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4751,6 +4783,7 @@ MonoBehaviour:
   - {fileID: 206929382}
   - {fileID: 65784449}
   - {fileID: 985140454}
+  basePoint: {fileID: 2071070643}
 --- !u!95 &704289222
 Animator:
   serializedVersion: 4
@@ -4782,6 +4815,10 @@ PrefabInstance:
     - target: {fileID: 255209753552570716, guid: febf971a89ddc4f47b283124c8731fa5, type: 3}
       propertyPath: m_Name
       value: rock_crystalsLargeB
+      objectReference: {fileID: 0}
+    - target: {fileID: 255209753552570716, guid: febf971a89ddc4f47b283124c8731fa5, type: 3}
+      propertyPath: m_TagString
+      value: roca
       objectReference: {fileID: 0}
     - target: {fileID: 630925368765125606, guid: febf971a89ddc4f47b283124c8731fa5, type: 3}
       propertyPath: m_RootOrder
@@ -5112,6 +5149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_crystalsLargeA
       objectReference: {fileID: 0}
+    - target: {fileID: 6188687268421896863, guid: 29430943fc8461b42af0da72f28a0f67, type: 3}
+      propertyPath: m_TagString
+      value: roca
+      objectReference: {fileID: 0}
     - target: {fileID: 6821109436605878309, guid: 29430943fc8461b42af0da72f28a0f67, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5175,6 +5216,10 @@ PrefabInstance:
     - target: {fileID: 1996179480292840, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
       propertyPath: m_Name
       value: SM_Gerneric_Grass_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996179480292840, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
+      propertyPath: m_TagString
+      value: planta
       objectReference: {fileID: 0}
     - target: {fileID: 4349752493701502, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
       propertyPath: m_RootOrder
@@ -5241,6 +5286,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1136627, y: 1.1587143, z: 1.2923813}
   m_Center: {x: 0, y: 0.57935715, z: 0}
+--- !u!208 &750790424
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191850282}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.55700004, y: 0.57900006, z: 0.646}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.57900006, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &751683933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5252,6 +5313,10 @@ PrefabInstance:
     - target: {fileID: 558681881705370214, guid: c1d0000cc987cac49a32d62c1214f985, type: 3}
       propertyPath: m_Name
       value: rock_crystals
+      objectReference: {fileID: 0}
+    - target: {fileID: 558681881705370214, guid: c1d0000cc987cac49a32d62c1214f985, type: 3}
+      propertyPath: m_TagString
+      value: roca
       objectReference: {fileID: 0}
     - target: {fileID: 903823410991106268, guid: c1d0000cc987cac49a32d62c1214f985, type: 3}
       propertyPath: m_RootOrder
@@ -5573,6 +5638,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_crystals
       objectReference: {fileID: 0}
+    - target: {fileID: 558681881705370214, guid: c1d0000cc987cac49a32d62c1214f985, type: 3}
+      propertyPath: m_TagString
+      value: roca
+      objectReference: {fileID: 0}
     - target: {fileID: 903823410991106268, guid: c1d0000cc987cac49a32d62c1214f985, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -5636,6 +5705,10 @@ PrefabInstance:
     - target: {fileID: 1996179480292840, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
       propertyPath: m_Name
       value: SM_Gerneric_Grass_007
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996179480292840, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
+      propertyPath: m_TagString
+      value: planta
       objectReference: {fileID: 0}
     - target: {fileID: 4349752493701502, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
       propertyPath: m_RootOrder
@@ -5702,6 +5775,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1136627, y: 1.1587143, z: 1.2923813}
   m_Center: {x: 0, y: 0.57935715, z: 0}
+--- !u!208 &796301510
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352689368}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.55700004, y: 0.57900006, z: 0.646}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.57900006, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &800684848 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4680635812253309633, guid: f5df9c464492efc4c89d46215fb201d3, type: 3}
@@ -6020,6 +6109,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_crystalsLargeA
       objectReference: {fileID: 0}
+    - target: {fileID: 6188687268421896863, guid: 29430943fc8461b42af0da72f28a0f67, type: 3}
+      propertyPath: m_TagString
+      value: roca
+      objectReference: {fileID: 0}
     - target: {fileID: 6821109436605878309, guid: 29430943fc8461b42af0da72f28a0f67, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -6090,6 +6183,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1136627, y: 1.1587143, z: 1.2923813}
   m_Center: {x: 0, y: 0.57935715, z: 0}
+--- !u!208 &887625499
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887625493}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.55700004, y: 0.57900006, z: 0.646}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.57900006, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &901398569
 GameObject:
   m_ObjectHideFlags: 0
@@ -6221,6 +6330,10 @@ PrefabInstance:
     - target: {fileID: 6188687268421896863, guid: 29430943fc8461b42af0da72f28a0f67, type: 3}
       propertyPath: m_Name
       value: rock_crystalsLargeA
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188687268421896863, guid: 29430943fc8461b42af0da72f28a0f67, type: 3}
+      propertyPath: m_TagString
+      value: roca
       objectReference: {fileID: 0}
     - target: {fileID: 6821109436605878309, guid: 29430943fc8461b42af0da72f28a0f67, type: 3}
       propertyPath: m_RootOrder
@@ -6388,6 +6501,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1136627, y: 1.1587143, z: 1.2923813}
   m_Center: {x: 0, y: 0.57935715, z: 0}
+--- !u!208 &949685222
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949685216}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.55700004, y: 0.57900006, z: 0.646}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.57900006, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &966116815
 GameObject:
   m_ObjectHideFlags: 0
@@ -7046,6 +7175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Gerneric_Grass_003
       objectReference: {fileID: 0}
+    - target: {fileID: 1996179480292840, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
+      propertyPath: m_TagString
+      value: planta
+      objectReference: {fileID: 0}
     - target: {fileID: 4349752493701502, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -7245,29 +7378,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6122183576180447149, guid: 0bc96a1542116644d8861876456dc0e6, type: 3}
   m_PrefabInstance: {fileID: 1228785360}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1124484161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124484160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cf27f18c368114487ce4d47478ea2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barajas:
-  - {fileID: 65784449}
-  - {fileID: 1633452708}
-  - {fileID: 206929382}
-  - {fileID: 469330462}
-  - {fileID: 985140454}
-  - {fileID: 74523911}
-  - {fileID: 2071070643}
-  numPoint: 0
-  velocity: 5
-  agent: {fileID: 0}
 --- !u!195 &1124484163
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -7290,6 +7400,47 @@ NavMeshAgent:
   m_BaseOffset: -0.02
   m_WalkableMask: 29
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1124484165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124484160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba410da701c2e744af2e86d9ad8cf35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barajas: {fileID: 0}
+  barajasPoints:
+  - {fileID: 74523911}
+  - {fileID: 1633452708}
+  - {fileID: 469330462}
+  - {fileID: 206929382}
+  - {fileID: 65784449}
+  - {fileID: 985140454}
+  basePoint: {fileID: 2071070643}
+--- !u!95 &1124484166
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124484160}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6ddd39e0276986a40bed312cf182827c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1144860477 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1779123401782265799, guid: 0a7323c0cc3b13c43a8d8d914c63ffba, type: 3}
@@ -7895,7 +8046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1401451636063552248, guid: 0bc96a1542116644d8861876456dc0e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.47
+      value: -12.72
       objectReference: {fileID: 0}
     - target: {fileID: 1401451636063552248, guid: 0bc96a1542116644d8861876456dc0e6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7903,7 +8054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1401451636063552248, guid: 0bc96a1542116644d8861876456dc0e6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 44.23
+      value: 37.71
       objectReference: {fileID: 0}
     - target: {fileID: 1401451636063552248, guid: 0bc96a1542116644d8861876456dc0e6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8448,6 +8599,10 @@ PrefabInstance:
     - target: {fileID: 255209753552570716, guid: febf971a89ddc4f47b283124c8731fa5, type: 3}
       propertyPath: m_Name
       value: rock_crystalsLargeB
+      objectReference: {fileID: 0}
+    - target: {fileID: 255209753552570716, guid: febf971a89ddc4f47b283124c8731fa5, type: 3}
+      propertyPath: m_TagString
+      value: roca
       objectReference: {fileID: 0}
     - target: {fileID: 630925368765125606, guid: febf971a89ddc4f47b283124c8731fa5, type: 3}
       propertyPath: m_RootOrder
@@ -9208,6 +9363,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1136627, y: 1.1587143, z: 1.2923813}
   m_Center: {x: 0, y: 0.57935715, z: 0}
+--- !u!208 &1414320765
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414320759}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.55700004, y: 0.57900006, z: 0.646}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.57900006, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1421071418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9335,6 +9506,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1136627, y: 1.1587143, z: 1.2923813}
   m_Center: {x: 0, y: 0.57935715, z: 0}
+--- !u!208 &1436879604
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436879598}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.55700004, y: 0.57900006, z: 0.646}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.57900006, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1440414219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10010,6 +10197,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Gerneric_Grass_004
       objectReference: {fileID: 0}
+    - target: {fileID: 1996179480292840, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
+      propertyPath: m_TagString
+      value: planta
+      objectReference: {fileID: 0}
     - target: {fileID: 4349752493701502, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -10227,6 +10418,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_crystals
       objectReference: {fileID: 0}
+    - target: {fileID: 558681881705370214, guid: c1d0000cc987cac49a32d62c1214f985, type: 3}
+      propertyPath: m_TagString
+      value: roca
+      objectReference: {fileID: 0}
     - target: {fileID: 903823410991106268, guid: c1d0000cc987cac49a32d62c1214f985, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -10425,6 +10620,10 @@ PrefabInstance:
     - target: {fileID: 6188687268421896863, guid: 29430943fc8461b42af0da72f28a0f67, type: 3}
       propertyPath: m_Name
       value: rock_crystalsLargeA
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188687268421896863, guid: 29430943fc8461b42af0da72f28a0f67, type: 3}
+      propertyPath: m_TagString
+      value: roca
       objectReference: {fileID: 0}
     - target: {fileID: 6821109436605878309, guid: 29430943fc8461b42af0da72f28a0f67, type: 3}
       propertyPath: m_RootOrder
@@ -11544,29 +11743,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6122183576180447149, guid: fa0a56cf2ff932e41978e6793410d113, type: 3}
   m_PrefabInstance: {fileID: 809399845}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1781441934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781441932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cf27f18c368114487ce4d47478ea2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barajas:
-  - {fileID: 74523911}
-  - {fileID: 1633452708}
-  - {fileID: 469330462}
-  - {fileID: 985140454}
-  - {fileID: 206929382}
-  - {fileID: 65784449}
-  - {fileID: 2071070643}
-  numPoint: 0
-  velocity: 5
-  agent: {fileID: 0}
 --- !u!195 &1781441935
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -11589,6 +11765,47 @@ NavMeshAgent:
   m_BaseOffset: -0.02
   m_WalkableMask: 61
   m_ObstacleAvoidanceType: 4
+--- !u!95 &1781441937
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781441932}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e4fdeb1a4471f734ab97702af03c3908, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1781441938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781441932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba410da701c2e744af2e86d9ad8cf35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barajas: {fileID: 0}
+  barajasPoints:
+  - {fileID: 74523911}
+  - {fileID: 1633452708}
+  - {fileID: 985140454}
+  - {fileID: 1633452708}
+  - {fileID: 206929382}
+  - {fileID: 469330462}
+  basePoint: {fileID: 2071070643}
 --- !u!1 &1798047926 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6188687268421896863, guid: 29430943fc8461b42af0da72f28a0f67, type: 3}
@@ -11964,6 +12181,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1136627, y: 1.1587143, z: 1.2923813}
   m_Center: {x: 0, y: 0.57935715, z: 0}
+--- !u!208 &1830187095
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830187089}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.55700004, y: 0.57900006, z: 0.646}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.57900006, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1832535318 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 428080822015235255, guid: f24664e00534af242a7a173f7e3015ae, type: 3}
@@ -12416,6 +12649,10 @@ PrefabInstance:
     - target: {fileID: 255209753552570716, guid: febf971a89ddc4f47b283124c8731fa5, type: 3}
       propertyPath: m_Name
       value: rock_crystalsLargeB
+      objectReference: {fileID: 0}
+    - target: {fileID: 255209753552570716, guid: febf971a89ddc4f47b283124c8731fa5, type: 3}
+      propertyPath: m_TagString
+      value: roca
       objectReference: {fileID: 0}
     - target: {fileID: 630925368765125606, guid: febf971a89ddc4f47b283124c8731fa5, type: 3}
       propertyPath: m_RootOrder
@@ -13101,7 +13338,7 @@ GameObject:
   - component: {fileID: 2071070646}
   - component: {fileID: 2071070645}
   m_Layer: 0
-  m_Name: Waypoint1_001
+  m_Name: WaypointBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13184,6 +13421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Gerneric_Grass_005
       objectReference: {fileID: 0}
+    - target: {fileID: 1996179480292840, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
+      propertyPath: m_TagString
+      value: planta
+      objectReference: {fileID: 0}
     - target: {fileID: 4349752493701502, guid: 5c493ccc9798fb04ea4fd0d283dfb771, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -13249,6 +13490,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1136627, y: 1.1587143, z: 1.2923813}
   m_Center: {x: 0, y: 0.57935715, z: 0}
+--- !u!208 &2081055246
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657515628}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.55700004, y: 0.57900006, z: 0.646}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.57900006, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2082841058 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4756716396007529211, guid: 86650e5d72f227140880f6731a41f190, type: 3}
