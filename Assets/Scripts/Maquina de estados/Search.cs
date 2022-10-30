@@ -83,15 +83,23 @@ public class Search : StateMachineBehaviour
         
             if (Physics.Raycast(ray, out toca, 5f))
             {
-            if (objetoRaycast != toca.transform) {
-                if (!(toca.transform.tag == ("pared")))
-                {
-                    objetoRaycast = toca.transform;
-                    animator.SetBool("scan", true);
+                if (objetoRaycast != toca.transform) {
+                    if (!(toca.transform.tag == ("pared")))
+                    {
+                        if (agent.transform.name == "Grumpy" && toca.transform.tag == ("Rover"))
+                        {
+                            animator.SetBool("follow", true);
+                        }
+
+                        objetoRaycast = toca.transform;
+                        animator.SetBool("scan", true);
+
+                       
+
+                    }
+
+
                 }
-
-
-            }
             }
         
 

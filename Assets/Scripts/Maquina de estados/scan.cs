@@ -70,11 +70,37 @@ public class scan : StateMachineBehaviour
                         }
 
                     }
-                    else
-                    {
-                        animator.SetBool("scan", false);
-                    }
+                    
                 }
+            }
+            else if (agent.name == "Grumpy")
+            {
+                secScan = secScan + 1 * Time.deltaTime;
+
+                if (secScan >= 5f)
+                {
+                    if (Physics.Raycast(ray, out toca, 5f))
+                    {
+
+
+
+                        if (toca.transform.tag == ("planta"))
+                        {
+
+
+                            animator.SetBool("collect", true);
+
+                        }
+                        else
+                        {
+
+                            animator.SetBool("scan", false);
+                        }
+
+                    }
+
+                }
+                
             }
 
         }
@@ -105,10 +131,7 @@ public class scan : StateMachineBehaviour
 
 
                 }
-                else
-                {
-                    animator.SetBool("scan", false);
-                }
+                
 
 
 
