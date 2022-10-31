@@ -22,7 +22,7 @@ public class collect : StateMachineBehaviour
             if(conteo >= 3)
                 {
                 animator.SetBool("base", true);
-                conteo = 0;
+                //conteo = 0;
             }
             else
             {
