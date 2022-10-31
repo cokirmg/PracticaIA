@@ -9,9 +9,9 @@ public class Search : StateMachineBehaviour
     //public Transform[] barajas;
     public int numPoint ;
     //public float velocity = 5f;
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
     private Transform[] barajas;
-
+    public SearchPoints objetivo;
     public float secCharge;
 
 
@@ -21,6 +21,7 @@ public class Search : StateMachineBehaviour
     {
         agent = animator.gameObject.GetComponent<NavMeshAgent>();
         barajas = animator.gameObject.GetComponent<SearchPoints>().barajasPoints;
+        objetivo = animator.gameObject.GetComponent<SearchPoints>();
         //numPoint = animator.gameObject.GetComponent<SearchPoints>().numPoint;
 
         secCharge = 0;
@@ -78,7 +79,7 @@ public class Search : StateMachineBehaviour
         }
 
         Ray ray = new Ray(agent.transform.position, agent.transform.forward);
-        Debug.DrawRay(agent.transform.position, agent.transform.forward, Color.red);
+        Debug.DrawRay(agent.transform.position, agent.transform.forward*5f, Color.red);
         RaycastHit toca;
         
             if (Physics.Raycast(ray, out toca, 5f))
@@ -88,13 +89,24 @@ public class Search : StateMachineBehaviour
                     {
                         if (agent.transform.name == "Grumpy" && toca.transform.tag == ("Rover"))
                         {
-                            animator.SetBool("follow", true);
+                        
+                            objetivo.objetivo = toca.transform;
+                            agent.destination = objetivo.objetivo.transform.position;
+                        Debug.Log(objetivo); 
+                        //agent.destination = toca.transform.position;
+                        animator.SetBool("follow", true); 
+                        
+                        
                         }
+                        else
+                        {
+                        
+                            animator.SetBool("scan", true);
+                      
 
-                        objetoRaycast = toca.transform;
-                        animator.SetBool("scan", true);
+                         }
+                            objetoRaycast = toca.transform;
 
-                       
 
                     }
 
