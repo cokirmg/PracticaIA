@@ -36,21 +36,15 @@ public class follow : StateMachineBehaviour
             if(toca.transform.tag == "Rover")
             {
                animator.SetBool("follow", false);
-                
-            }
-           
-
-            
+  
+            }   
         }
         else
         {
             //Si no esta a menos de 1 que continúe siguiendole
             agent.destination = agentFollow.objetivo.transform.position;
         }
-
-       
-
-        
+    
 
     }
 

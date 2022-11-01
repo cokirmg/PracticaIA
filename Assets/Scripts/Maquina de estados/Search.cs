@@ -22,35 +22,25 @@ public class Search : StateMachineBehaviour
         agent = animator.gameObject.GetComponent<NavMeshAgent>();
         barajas = animator.gameObject.GetComponent<SearchPoints>().barajasPoints;
         objetivo = animator.gameObject.GetComponent<SearchPoints>();
-        //numPoint = animator.gameObject.GetComponent<SearchPoints>().numPoint;
-
         secCharge = 0;
         agent.speed = 3.5f;
-        //agent.destination = barajas[numPoint].position;
-        //le decimos que siga la ruta de los arrays
-        //agent.destination = barajas[numPoint].position;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //le decimos que siga la ruta de los arrays
         agent.destination = barajas[numPoint].position;
         //Aquí le digo que cada vez que llegue pase al siguiente punto, y si el punto es el máximo, que vuelva al principio
 
         if (Vector3.Distance(agent.transform.position, barajas[numPoint].position) < 1f)
         {
             agent.destination = barajas[numPoint].position;
-            Debug.Log("punto " + numPoint);
             numPoint = (numPoint + 1) % barajas.Length;
-
-
         }
 
 
         agent.destination = barajas[numPoint].position;
-
-
-        
 
         //Si toca la arena, que se reduzca la velocidad a la mitad
         int sandMask = 1 << NavMesh.GetAreaFromName("Sand");
@@ -69,7 +59,7 @@ public class Search : StateMachineBehaviour
         {
             agent.speed = 3.5f;
         }
-        //Si han pasado 30 segundos, que pase a search
+        //Si han pasado 30 segundos, que pase a charge
         secCharge = secCharge + 1 * Time.deltaTime;
         if (secCharge >= 30)
         {
