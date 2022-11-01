@@ -55,7 +55,7 @@ public class Search : StateMachineBehaviour
         //Si toca la arena, que se reduzca la velocidad a la mitad
         int sandMask = 1 << NavMesh.GetAreaFromName("Sand");
         NavMeshHit hit;
-        if (NavMesh.SamplePosition(animator.gameObject.transform.position, out hit, 0.01f, sandMask))
+        if (NavMesh.SamplePosition(animator.gameObject.transform.position, out hit, 1f, sandMask))
         {
             //Aqui le digo que solo lo haga si su velocidad es mayor que la mitad de su velocidad normal, para que no lo haga todo el rato
             if (agent.speed > agent.speed / 2)
@@ -69,7 +69,7 @@ public class Search : StateMachineBehaviour
         {
             agent.speed = 3.5f;
         }
-
+        //Si han pasado 30 segundos, que pase a search
         secCharge = secCharge + 1 * Time.deltaTime;
         if (secCharge >= 30)
         {
@@ -81,25 +81,25 @@ public class Search : StateMachineBehaviour
         Ray ray = new Ray(agent.transform.position, agent.transform.forward);
         Debug.DrawRay(agent.transform.position, agent.transform.forward*5f, Color.red);
         RaycastHit toca;
-        
+        //HAce un raycast de 5 metros 
             if (Physics.Raycast(ray, out toca, 5f))
-            {
+            {   //Si el objeto que toca no es el mismo que el anterior y no es una pared
                 if (objetoRaycast != toca.transform) {
                     if (!(toca.transform.tag == ("pared")))
-                    {
+                    {   //Si es grumpy y está tocando a un rover, lo sigue
                         if (agent.transform.name == "Grumpy" && toca.transform.tag == ("Rover"))
                         {
                         
                             objetivo.objetivo = toca.transform;
                             agent.destination = objetivo.objetivo.transform.position;
-                        Debug.Log(objetivo); 
-                        //agent.destination = toca.transform.position;
-                        animator.SetBool("follow", true); 
+                            Debug.Log(objetivo); 
+                            //agent.destination = toca.transform.position;
+                            animator.SetBool("follow", true); 
                         
                         
                         }
                         else
-                        {
+                        {   //Si no, escanea normal
                         
                             animator.SetBool("scan", true);
                       
@@ -122,6 +122,7 @@ public class Search : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //Al salir del search que se quite la velocidad, ya que suele salir para el scan
         agent.speed = 0f;
     }
 

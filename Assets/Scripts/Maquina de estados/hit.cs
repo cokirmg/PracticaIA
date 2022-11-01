@@ -23,6 +23,7 @@ public class hit : StateMachineBehaviour
         {
             if (toca.transform.tag == "Rover")
             {
+                // si está a menos de un metro le roba su inventario y luego el suyo pasa a 0, y hace que al que le das pase a stun, después de haberle robado todo pasa a base
                 animator.GetBehaviour<collect>().conteo = animator.GetBehaviour<collect>().conteo + toca.transform.GetComponent<Animator>().GetBehaviour<collect>().conteo;
                 toca.transform.GetComponent<Animator>().GetBehaviour<collect>().conteo = 0;
                 toca.transform.GetComponent<Animator>().SetBool("hit", true);

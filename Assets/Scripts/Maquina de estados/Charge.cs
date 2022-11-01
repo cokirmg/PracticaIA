@@ -15,6 +15,7 @@ public class Charge : StateMachineBehaviour
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //Suma el tiempo y si llega a 10 para de cargar y vuelve a search
         agent.speed = 0f;
         secCharging =secCharging + 1 * Time.deltaTime;
         if (secCharging >= 10)

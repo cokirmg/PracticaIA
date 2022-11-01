@@ -5,10 +5,11 @@ using UnityEngine.AI;
 
 public class SearchPoints : MonoBehaviour
 {
-    public Transform barajas;
+    //waypoints
+    //public Transform barajas;
     public Transform[] barajasPoints;
-
+    //para ir a base
     public Transform basePoint;
-
+    //el objetivo que sigue con el follow
     public Transform objetivo;
 }

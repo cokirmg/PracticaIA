@@ -4761,7 +4761,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 0.63
   m_BaseOffset: -0.02
-  m_WalkableMask: 1
+  m_WalkableMask: 17
   m_ObstacleAvoidanceType: 4
 --- !u!114 &704289220
 MonoBehaviour:
@@ -4775,7 +4775,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba410da701c2e744af2e86d9ad8cf35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barajas: {fileID: 0}
   barajasPoints:
   - {fileID: 74523911}
   - {fileID: 1633452708}
@@ -7426,7 +7425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba410da701c2e744af2e86d9ad8cf35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barajas: {fileID: 0}
   barajasPoints:
   - {fileID: 74523911}
   - {fileID: 1633452708}
@@ -11830,7 +11828,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba410da701c2e744af2e86d9ad8cf35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barajas: {fileID: 0}
   barajasPoints:
   - {fileID: 74523911}
   - {fileID: 1633452708}

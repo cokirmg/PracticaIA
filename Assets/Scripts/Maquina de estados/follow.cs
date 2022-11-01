@@ -23,11 +23,14 @@ public class follow : StateMachineBehaviour
     {
 
         agent.speed = 3.5f;
+        //Cambia tu destino al del rover que estás siguiendo que detectó anteriormente
         agent.destination = agentFollow.objetivo.transform.position;
-
+        
         Ray ray = new Ray(agent.transform.position, agent.transform.forward);
         Debug.DrawRay(agent.transform.position, agent.transform.forward * 1f, Color.red);
         RaycastHit toca;
+
+        //Dibuja un Raycast, si la distancia es menos que 1 y está tocando un rover, se desactiva el follow con lo que pasaría a hit
         if (Physics.Raycast(ray, out toca, 1f))
         {
             if(toca.transform.tag == "Rover")
@@ -35,12 +38,13 @@ public class follow : StateMachineBehaviour
                animator.SetBool("follow", false);
                 
             }
-            //agent.transform.position = toca.transform.position;
+           
 
             
         }
         else
         {
+            //Si no esta a menos de 1 que continúe siguiendole
             agent.destination = agentFollow.objetivo.transform.position;
         }
 

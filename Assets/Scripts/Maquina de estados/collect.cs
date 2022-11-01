@@ -9,13 +9,14 @@ public class collect : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //Al entrar te suma uno al conteo de objetos
         conteo++;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        //Que espere 3 segundos, si tiene 3 o mas de inventario que se vaya a base, sino, que siga buscando
         secCollect = secCollect + 1 * Time.deltaTime;
         if (secCollect >= 3)
         {
@@ -41,7 +42,8 @@ public class collect : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         secCollect = 0;
-        
+        //En caso de stun
+        animator.SetBool("collect", false);
         animator.SetBool("scan", false);
     }
 

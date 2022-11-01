@@ -11,12 +11,14 @@ public class stunned : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         agent = animator.gameObject.GetComponent<NavMeshAgent>();
+        //Pasa a estar parado
         agent.speed = 0f;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //Si llega a 5 segundos stuneado que deje de estar stuneado y pase a searh
         secStunned = secStunned + 1 * Time.deltaTime;
         if (secStunned >= 5)
         {
@@ -29,6 +31,7 @@ public class stunned : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //Los segundos se resetean
         secStunned = 0;
     }
 

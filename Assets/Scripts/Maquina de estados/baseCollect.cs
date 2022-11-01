@@ -13,7 +13,9 @@ public class baseCollect : StateMachineBehaviour
         animator.SetBool("collect", false);
         agent = animator.gameObject.GetComponent<NavMeshAgent>();
         basePoint = animator.gameObject.GetComponent<SearchPoints>().basePoint;
+        //la velocidad pasa a estar normal despues del scan
         agent.speed = 3.5f;
+        //Va a la base
         agent.destination = basePoint.position;
 
         
@@ -23,20 +25,22 @@ public class baseCollect : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         
-
+        //Cuando llega a base el conteo pasa a 0 y cambia de estado a search
         if (Vector3.Distance(agent.transform.position, basePoint.position) < 1f)
         {
+            animator.transform.GetComponent<Animator>().GetBehaviour<collect>().conteo = 0;
             animator.SetBool("base", false);
 
 
         }
+        //Si no esta cerca del waypoint de search que siga al destino a la base
         agent.destination = basePoint.position;
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        //En caso de que le stuneen que se quite el true del base
         animator.SetBool("base", false);
     }
 
