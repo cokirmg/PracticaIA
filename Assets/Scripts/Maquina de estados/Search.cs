@@ -10,7 +10,7 @@ public class Search : StateMachineBehaviour
     public int numPoint ;
     //public float velocity = 5f;
     public NavMeshAgent agent;
-    private Transform[] barajas;
+    //private Transform[] barajas;
     public SearchPoints objetivo;
     public float secCharge;
 
@@ -20,7 +20,7 @@ public class Search : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         agent = animator.gameObject.GetComponent<NavMeshAgent>();
-        barajas = animator.gameObject.GetComponent<SearchPoints>().barajasPoints;
+        //barajas = animator.gameObject.GetComponent<SearchPoints>().barajasPoints;
         objetivo = animator.gameObject.GetComponent<SearchPoints>();
         secCharge = 0;
         agent.speed = 3.5f;
@@ -30,17 +30,17 @@ public class Search : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //le decimos que siga la ruta de los arrays
-        agent.destination = barajas[numPoint].position;
+        agent.destination = GameManager.Instance.barajas[numPoint].transform.position;
         //Aquí le digo que cada vez que llegue pase al siguiente punto, y si el punto es el máximo, que vuelva al principio
 
-        if (Vector3.Distance(agent.transform.position, barajas[numPoint].position) < 1f)
+        if (Vector3.Distance(agent.transform.position, GameManager.Instance.barajas[numPoint].transform.position) < 1f)
         {
-            agent.destination = barajas[numPoint].position;
-            numPoint = (numPoint + 1) % barajas.Length;
+            agent.destination = GameManager.Instance.barajas[numPoint].transform.position;
+            numPoint = (numPoint + 1) % GameManager.Instance.barajas.Length;
         }
 
 
-        agent.destination = barajas[numPoint].position;
+        agent.destination = GameManager.Instance.barajas[numPoint].transform.position;
 
         //Si toca la arena, que se reduzca la velocidad a la mitad
         int sandMask = 1 << NavMesh.GetAreaFromName("Sand");
@@ -51,7 +51,7 @@ public class Search : StateMachineBehaviour
             if (agent.speed > agent.speed / 2)
             {
                 Debug.Log("arena");
-                agent.speed = agent.speed / 2;
+                agent.speed = 1.75f;
             }
 
         }
