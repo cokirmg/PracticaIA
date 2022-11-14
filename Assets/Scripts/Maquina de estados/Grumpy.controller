@@ -70,6 +70,13 @@ MonoBehaviour:
   agent: {fileID: 0}
   objetivo: {fileID: 0}
   secCharge: 0
+  agentBarajas:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   objetoRaycast: {fileID: 0}
 --- !u!1107 &-7893481817589647135
 AnimatorStateMachine:
@@ -333,6 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2319203c40af41e408e54c4dec09f966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secBase: 0
 --- !u!1102 &-1423313184009472145
 AnimatorState:
   serializedVersion: 6

@@ -212,7 +212,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numPoint: 0
+  agent: {fileID: 0}
+  objetivo: {fileID: 0}
   secCharge: 0
+  agentBarajas:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   objetoRaycast: {fileID: 0}
 --- !u!1101 &-963176229601451381
 AnimatorStateTransition:
@@ -281,31 +290,31 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: scan
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: collect
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: base
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: hit
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -411,6 +420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secStunned: 0
+  agent: {fileID: 0}
 --- !u!114 &3096207937483711984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -487,6 +497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secScan: 0
+  rotationNum: 20
 --- !u!114 &4772698920772434256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -499,6 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2319203c40af41e408e54c4dec09f966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secBase: 0
 --- !u!1101 &7071391994249185844
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

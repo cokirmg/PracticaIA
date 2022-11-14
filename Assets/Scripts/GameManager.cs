@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public GameObject[] barajas;
     public GameObject[] Rover;
+    public Transform[] destinoBarajas;
 
     public void Awake()
     {
@@ -36,12 +37,25 @@ public class GameManager : MonoBehaviour
 
 
 
-        Debug.Log(barajas[1].transform.position);
+        //Debug.Log(barajas[1].transform.position);
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public Transform[] waypointsBarajas()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            int waypoint = Random.Range(0, barajas.Length);
+            destinoBarajas[i] = barajas[waypoint].transform;
+
+        }
+        return destinoBarajas;
+       
     }
 }

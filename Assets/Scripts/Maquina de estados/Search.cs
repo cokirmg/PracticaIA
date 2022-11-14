@@ -13,7 +13,7 @@ public class Search : StateMachineBehaviour
     //private Transform[] barajas;
     public SearchPoints objetivo;
     public float secCharge;
-
+    public Transform[] agentBarajas;
 
     public Transform objetoRaycast;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -24,23 +24,24 @@ public class Search : StateMachineBehaviour
         objetivo = animator.gameObject.GetComponent<SearchPoints>();
         secCharge = 0;
         agent.speed = 3.5f;
+        agentBarajas = GameManager.Instance.waypointsBarajas();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //le decimos que siga la ruta de los arrays
-        agent.destination = GameManager.Instance.barajas[numPoint].transform.position;
+        agent.destination = agentBarajas[numPoint].transform.position;
         //Aquí le digo que cada vez que llegue pase al siguiente punto, y si el punto es el máximo, que vuelva al principio
 
-        if (Vector3.Distance(agent.transform.position, GameManager.Instance.barajas[numPoint].transform.position) < 1f)
+        if (Vector3.Distance(agent.transform.position, agentBarajas[numPoint].transform.position) < 1f)
         {
-            agent.destination = GameManager.Instance.barajas[numPoint].transform.position;
-            numPoint = (numPoint + 1) % GameManager.Instance.barajas.Length;
+            agent.destination = agentBarajas[numPoint].transform.position;
+            numPoint = (numPoint + 1) % agentBarajas.Length;
         }
 
 
-        agent.destination = GameManager.Instance.barajas[numPoint].transform.position;
+        agent.destination = agentBarajas[numPoint].transform.position;
 
         //Si toca la arena, que se reduzca la velocidad a la mitad
         int sandMask = 1 << NavMesh.GetAreaFromName("Sand");

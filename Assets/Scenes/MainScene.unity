@@ -4776,12 +4776,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barajasPoints:
-  - {fileID: 74523911}
-  - {fileID: 1633452708}
-  - {fileID: 469330462}
-  - {fileID: 206929382}
-  - {fileID: 65784449}
-  - {fileID: 985140454}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   basePoint: {fileID: 2071070643}
   objetivo: {fileID: 0}
 --- !u!95 &704289222
@@ -7426,12 +7426,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barajasPoints:
-  - {fileID: 74523911}
-  - {fileID: 1633452708}
-  - {fileID: 469330462}
-  - {fileID: 206929382}
-  - {fileID: 65784449}
-  - {fileID: 985140454}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   basePoint: {fileID: 2071070643}
   objetivo: {fileID: 0}
 --- !u!95 &1124484166
@@ -11665,6 +11665,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barajas: []
   Rover: []
+  destinoBarajas:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &1740009741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11844,12 +11851,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barajasPoints:
-  - {fileID: 74523911}
-  - {fileID: 1633452708}
-  - {fileID: 985140454}
-  - {fileID: 1633452708}
-  - {fileID: 206929382}
-  - {fileID: 469330462}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   basePoint: {fileID: 2071070643}
   objetivo: {fileID: 1124484167}
 --- !u!65 &1781441940
