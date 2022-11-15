@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] barajas;
     public GameObject[] Rover;
     public Transform[] destinoBarajas;
+    public Transform[] destinoBarajasSinRepeticion;
 
     public void Awake()
     {
@@ -51,10 +53,16 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < 6; i++)
         {
+
+            //destinoBarajasSinRepeticion = destinoBarajas.Distinct().ToArray();
             int waypoint = Random.Range(0, barajas.Length);
             destinoBarajas[i] = barajas[waypoint].transform;
+            
+
+            
 
         }
+        
         return destinoBarajas;
        
     }
