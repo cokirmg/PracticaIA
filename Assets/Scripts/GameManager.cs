@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] barajas;
     public GameObject[] Rover;
     public Transform[] destinoBarajas;
-    public Transform[] destinoBarajasSinRepeticion;
+    //public Transform[] destinoBarajasSinRepeticion;
 
     public void Awake()
     {

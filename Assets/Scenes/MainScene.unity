@@ -11615,7 +11615,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1738002231}
   - component: {fileID: 1738002230}
-  - component: {fileID: 1738002232}
   m_Layer: 0
   m_Name: AIDirector
   m_TagString: Untagged
@@ -11636,6 +11635,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Storm: {fileID: 1938410215}
+  intervaloTormenta: 0
+  duracionTormenta: 0
+  tormentona: 0
+  barajas: []
+  rover: []
+  destinoBarajas:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  destinoBarajasSinRepeticion: []
 --- !u!4 &1738002231
 Transform:
   m_ObjectHideFlags: 0
@@ -11651,27 +11663,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1738002232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1738002229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2bdf60f2e1290745a277b443c3b08bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barajas: []
-  Rover: []
-  destinoBarajas:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1001 &1740009741
 PrefabInstance:
   m_ObjectHideFlags: 0
