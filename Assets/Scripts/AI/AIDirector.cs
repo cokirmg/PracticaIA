@@ -100,15 +100,14 @@ public class AIDirector : MonoBehaviour
         }
         tormentona = true;
     }
-
+                         
     public Transform[] waypointsBarajas()
     {
-        for (int i = 0; i < 6; i++)
-        {
+        
 
-            destinoBarajasSinRepeticion = destinoBarajas.Distinct().ToArray();
-            int waypoint = Random.Range(0, barajas.Length);
-            destinoBarajas[i] = barajas[waypoint].transform;
+            //destinoBarajasSinRepeticion = destinoBarajas.Distinct().ToArray();
+           
+            //destinoBarajas[i] = barajas[waypoint].transform;
 
 
             /*if(destinoBarajasSinRepeticion.Length < 6)
@@ -120,17 +119,44 @@ public class AIDirector : MonoBehaviour
                 destinoBarajasSinRepeticion = destinoBarajas.Distinct().ToArray();
                 break;
             } */
+            int añadido = 0;
+        Debug.Log("entra while");
+            while (añadido < 6)
+            {
+                
+                    int indice = Random.Range(0, barajas.Length);
+                    Debug.Log(indice);
+                Transform waypoint = barajas[indice].transform;
+                    if (!existePunto(waypoint))
+                        {
+                            //int waypoint = Random.Range(0, barajas.Length);
+                            destinoBarajas[añadido] = waypoint;
+                            añadido++;
+                        }
+
+            }
 
 
+            
 
 
-            Debug.Log(i);
+        
+
+        return destinoBarajas;
 
 
+    }
+    public bool existePunto(Transform waypoint)
+    {
+        bool existe = false;
+        for (int i = 0; i < destinoBarajas.Length; i++)
+        {
+            if (destinoBarajas[i] == waypoint)
+            {
+                existe = true;
+            }
+            
         }
-
-        return destinoBarajasSinRepeticion;
-
-
+        return existe;
     }
 }
