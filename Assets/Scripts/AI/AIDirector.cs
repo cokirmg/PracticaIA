@@ -13,16 +13,16 @@ public class AIDirector : MonoBehaviour
     public bool tormentona;
 
 
-    public static AIDirector Instance { get; private set; }
-    public GameObject[] barajas;
+    public static AIDirector Instance { get; private set; } //Patron Singleton
+    public List<GameObject> barajasList = new List<GameObject>();
     public GameObject[] rover;
-    public Transform[] destinoBarajas;
     public Transform[] destinoBarajasSinRepeticion;
 
     private NavMeshAgent agent;
 
     public void Awake()
     {
+        
         if (Instance == null)
         {
             Instance = this;
@@ -35,128 +35,88 @@ public class AIDirector : MonoBehaviour
         //Opcional
         DontDestroyOnLoad(gameObject);
 
+        //Busco todos los waypoints y los añado a la lista
+        GameObject.FindGameObjectsWithTag("waypoint");
+        barajasList.AddRange(GameObject.FindGameObjectsWithTag("waypoint"));
     }
 
 
     public void Start()
     {
-        
 
 
-        tormentona = true;
-        intervaloTormenta = Random.Range(25f, 40f);
-        duracionTormenta = Random.Range(15f, 30f);
 
+        tormentona = true; //Se activa el periodo de tormenta
+        intervaloTormenta = Random.Range(25f, 40f); //Espera de la tormenta
+        duracionTormenta = Random.Range(15f, 30f);//Duración de la tormenta
 
-        barajas = GameObject.FindGameObjectsWithTag("waypoint");
+        //Lista todos los rovers
         rover = GameObject.FindGameObjectsWithTag("Rover");
     }
 
     public void Update()
     {
-        if(tormentona)
+
+        //El spawn de la tormenta
+        if (tormentona)
         {
             StartCoroutine(Stormy());
         }
     }
     private void StartStorm()
     {
-        Storm.SetActive(true);
+        Storm.SetActive(true); //Se activa la tormenta
     }
 
     private void StopStorm()
     {
-        Storm.SetActive(false);
+        Storm.SetActive(false);//Se desactiva la tormenta
     }
-     
+
     IEnumerator Stormy()
     {
-        
-        tormentona = false;
-        yield return new WaitForSeconds(20f);
+
+        tormentona = false; //Se desactiva el booleano para que no se haga de nuevo
+        yield return new WaitForSeconds(20f);//Empiezan los primeros 20 segundos hasta que empieza la tormenta
         for (int i = 0; i < rover.Length; i++)
         {
 
-            rover[i].transform.GetComponent<Animator>().SetBool("alarm", true);
+            rover[i].transform.GetComponent<Animator>().SetBool("alarm", true); //El director avisa a todos los rovers para que pasen a alarm
 
         }
-          
-        yield return new WaitForSeconds(intervaloTormenta);
-        StartStorm();
+
+        yield return new WaitForSeconds(intervaloTormenta);//Espera de la tormenta
+        StartStorm();//Empieza la tormenta
         for (int i = 0; i < rover.Length; i++)
         {
 
-            rover[i].transform.GetComponent<Animator>().SetBool("waiting", true);
-            rover[i].transform.GetComponent<Animator>().GetBehaviour<waiting>().vaciarInventario();
+            rover[i].transform.GetComponent<Animator>().SetBool("waiting", true); //Los que no hayan llegado a base que pasen a waiting
+            rover[i].transform.GetComponent<Animator>().GetBehaviour<waiting>().vaciarInventario(); //Se aplica el metodo de vacio de inventario, que a los que estén en base no les afectará
 
         }
         yield return new WaitForSeconds(duracionTormenta);
-        StopStorm();
+        StopStorm();//Acaba la tormenta
         for (int i = 0; i < rover.Length; i++)
         {
 
-            rover[i].transform.GetComponent<Animator>().SetBool("waiting", false);
+            rover[i].transform.GetComponent<Animator>().SetBool("waiting", false); //Cuando acaba la tormenta todos los estados de los rovers de waiting pasan a false
 
         }
         tormentona = true;
     }
-                         
+
     public Transform[] waypointsBarajas()
     {
-        
-
-            //destinoBarajasSinRepeticion = destinoBarajas.Distinct().ToArray();
-           
-            //destinoBarajas[i] = barajas[waypoint].transform;
-
-
-            /*if(destinoBarajasSinRepeticion.Length < 6)
-            {
-                
-                Debug.Log("if while");
-                waypoint = Random.Range(0, barajas.Length);
-                destinoBarajas[i] = barajas[waypoint].transform;
-                destinoBarajasSinRepeticion = destinoBarajas.Distinct().ToArray();
-                break;
-            } */
-            int añadido = 0;
-        Debug.Log("entra while");
-            while (añadido < 6)
-            {
-                
-                    int indice = Random.Range(0, barajas.Length);
-                    Debug.Log(indice);
-                Transform waypoint = barajas[indice].transform;
-                    if (!existePunto(waypoint))
-                        {
-                            //int waypoint = Random.Range(0, barajas.Length);
-                            destinoBarajas[añadido] = waypoint;
-                            añadido++;
-                        }
-
-            }
-
-
-            
-
-
-        
-
-        return destinoBarajas;
-
-
-    }
-    public bool existePunto(Transform waypoint)
-    {
-        bool existe = false;
-        for (int i = 0; i < destinoBarajas.Length; i++)
+        Transform[] destinoBarajas = new Transform[6]; 
+        List<GameObject> barajas = new(); //Crea una nueva lista para saber si se repiten los puntos
+        barajas.AddRange(barajasList); //Añade todos los valores a la lista
+        for (int i = 0; i < destinoBarajas.Length; ++i)
         {
-            if (destinoBarajas[i] == waypoint)
-            {
-                existe = true;
-            }
-            
+            int indice = Random.Range(0, barajas.Count);
+            destinoBarajas[i] = barajas[indice].transform; //Coge un valor aleatorio de la lista y lo borra de la que están todos
+            barajas.RemoveAt(indice);
         }
-        return existe;
+
+        return destinoBarajas; //Le devuelve la lista entera
     }
 }

@@ -11,7 +11,7 @@ public class waiting : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         agent = animator.gameObject.GetComponent<NavMeshAgent>();
-        agent.speed = 0f;
+        agent.speed = 0f; //Hace que se pare el rover
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -23,10 +23,12 @@ public class waiting : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        agent.speed = 3.5f;
+        agent.speed = 3.5f; //Vuelve a darle velocidad
     }
     public void vaciarInventario()
     {
+        //Si se encuentra en el are de Base le borra el inventario
+
         int baseMask = 1 << NavMesh.GetAreaFromName("Base");
         NavMeshHit hit;
 

@@ -18,6 +18,8 @@ public class alarm : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+
+        //Le pasa la dirección de base y cuando llega a base pasa a waiting
         agent.destination = basePoint.position;
 
         int baseMask = 1 << NavMesh.GetAreaFromName("Base");

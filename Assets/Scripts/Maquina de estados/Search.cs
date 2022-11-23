@@ -24,7 +24,7 @@ public class Search : StateMachineBehaviour
         objetivo = animator.gameObject.GetComponent<SearchPoints>();
         secCharge = 0;
         agent.speed = 3.5f;
-        agentBarajas = AIDirector.Instance.waypointsBarajas();
+        agentBarajas = AIDirector.Instance.waypointsBarajas(); //Coge los waiypoints del director
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
